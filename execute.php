@@ -17,9 +17,14 @@ $date = isset($message['date']) ? $message['date'] : "";
 $text = isset($message['text']) ? $message['text'] : "";
 
 $text = trim($text);
-$text = strtoupper($text);
+$text = strtolower($text);
+
+if (strpos($text, "cata"))
+{
+  $output = "Cata sei un giullare macrogenitalico";  
+}
 
 header("Content-Type: application/json");
-$parameters = array('chat_id' => $chatId, "text" => $text);
+$parameters = array('chat_id' => $chatId, "text" => $output);
 $parameters["method"] = "sendMessage";
 echo json_encode($parameters);
