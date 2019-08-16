@@ -19,7 +19,7 @@ $text = isset($message['text']) ? $message['text'] : "";
 $text = trim($text);
 $text = strtolower($text);
 
-if (strpos($text, "cata"))
+if (strpos($text, "cata") || $text == "cata")
 {
   $output = "Cata sei un giullare macrogenitalico";  
 }
