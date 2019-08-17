@@ -18,22 +18,21 @@ $text = isset($message['text']) ? $message['text'] : "";
 
 $text = trim($text);
 $text = strtolower($text);
-$output = $text;
 
-if (strpos($text, "corvø") >== 0)
+if (strpos($text, "corvø") !== false)
 {
   $output = "dioporco";
 }
 
-else if (strpos($text, "cata") || $text == "cata")
+else if (strpos($text, "cata") !== false)
 {
   $output = "Cata sei un giullare macrogenitalico";
 }
 
-/*else
+else
 {
   exit;
-}*/
+}
 
 header("Content-Type: application/json");
 $parameters = array('chat_id' => $chatId, "text" => $output);
