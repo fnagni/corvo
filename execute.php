@@ -30,10 +30,10 @@ else if (strpos($text, "cata") || $text == "cata")
   $output = "Cata sei un giullare macrogenitalico";
 }
 
-else
+/*else
 {
   exit;
-}
+}*/
 
 header("Content-Type: application/json");
 $parameters = array('chat_id' => $chatId, "text" => $output);
