@@ -20,7 +20,7 @@ $text = trim($text);
 $text = strtolower($text);
 $output = $text;
 
-if (strpos($text, "corvø") >= 0)
+if (strpos($text, "corvø") >== 0)
 {
   $output = "dioporco";
 }
