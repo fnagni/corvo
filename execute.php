@@ -18,15 +18,16 @@ $text = isset($message['text']) ? $message['text'] : "";
 
 $text = trim($text);
 $text = strtolower($text);
+$output = $text;
 
 if (strpos($text, "corvø"))
 {
-  $output = "dioporco";  
+  $output = "dioporco";
 }
 
 else if (strpos($text, "cata") || $text == "cata")
 {
-  $output = "Cata sei un giullare macrogenitalico";  
+  $output = "Cata sei un giullare macrogenitalico";
 }
 
 else
