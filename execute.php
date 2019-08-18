@@ -19,15 +19,15 @@ $text = isset($message['text']) ? $message['text'] : "";
 $text = trim($text);
 $text = strtolower($text);
 
-$statusfile = fopen("https://github.com/fnagni/corvo/blob/master/status/p", "r");
-$status = fread($statusfile, filesize("https://github.com/fnagni/corvo/blob/master/status/p"));
+$statusfile = fopen($chatId, "r");
+$status = fread($statusfile, filesize($chatId));
 fclose($statusfile);
 
 if ($status == "off")
 {
   if ($text == "corvø svegliati")
   {
-    $statusfile = fopen("https://github.com/fnagni/corvo/blob/master/status/p", "w");
+    $statusfile = fopen($chatId, "w");
     fwrite($statusfile, "on");
     fclose($statusfile);
     
@@ -145,7 +145,7 @@ else
 
     else if (strpos($text, "dormi") !== false)
     {
-      $statusfile = fopen("https://github.com/fnagni/corvo/blob/master/status/p", "w");
+      $statusfile = fopen($chatId, "w");
       fwrite($statusfile, "off");
       fclose($statusfile);
       
