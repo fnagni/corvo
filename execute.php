@@ -158,7 +158,8 @@ else
 
   else if (strpos($text, "cata") !== false)
   {
-    $output = "Cata sei un giullare macrogenitalico";
+    //$output = "Cata sei un giullare macrogenitalico";
+    $output = getcwd();
   }
 
   else
@@ -170,4 +171,4 @@ else
 header("Content-Type: application/json");
 $parameters = array('chat_id' => $chatId, "text" => $output);
 $parameters["method"] = "sendMessage";
-echo json_encode(getcwd());
+echo json_encode($parameters);
