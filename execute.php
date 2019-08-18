@@ -20,7 +20,7 @@ $text = trim($text);
 $text = strtolower($text);
 
 $statusfile = fopen("/status/".$chatId, "r");
-$status = fread($statusfile, filesize($chatId));
+$status = fread($statusfile, filesize("/status/".$chatId));
 fclose($statusfile);
 
 if ($status == "off")
