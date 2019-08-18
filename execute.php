@@ -19,22 +19,16 @@ $text = isset($message['text']) ? $message['text'] : "";
 $text = trim($text);
 $text = strtolower($text);
 
-$statusfile = fopen("status", "r");
-$status = fread($statusfile, filesize("status"));
-
-//$statusfile = fopen($chatId, "r");
-//$status = fread($statusfile, filesize($chatId));
+$statusfile = fopen($chatId, "r");
+$status = fread($statusfile, filesize($chatId));
 fclose($statusfile);
 
 if ($status == "off")
 {
   if ($text == "corvø svegliati")
-  {
-    $statusfile = fopen("status", "w");
+  {    
+    $statusfile = fopen($chatId, "w");
     fwrite($statusfile, "on");
-    
-    //$statusfile = fopen($chatId, "w");
-    //fwrite($statusfile, "on");
     fclose($statusfile);
     
     $output = "Ecchime!";
@@ -151,11 +145,8 @@ else
 
     else if (strpos($text, "dormi") !== false)
     {
-      $statusfile = fopen("status", "w");
+      $statusfile = fopen($chatId, "w");
       fwrite($statusfile, "off");
-      
-      //$statusfile = fopen($chatId, "w");
-      //fwrite($statusfile, "off");
       fclose($statusfile);
       
       $output = "Ve sallustio";
@@ -179,4 +170,4 @@ else
 header("Content-Type: application/json");
 $parameters = array('chat_id' => $chatId, "text" => $output);
 $parameters["method"] = "sendMessage";
-echo json_encode($parameters);
+echo json_encode(echo getcwd());
