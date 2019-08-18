@@ -19,15 +19,15 @@ $text = isset($message['text']) ? $message['text'] : "";
 $text = trim($text);
 $text = strtolower($text);
 
-$statusfile = fopen("./status/p", "r");
-$status = fread($statusfile, filesize("status.txt"));
+$statusfile = fopen("/status/".$chatId, "r");
+$status = fread($statusfile, filesize($chatId));
 fclose($statusfile);
 
 if ($status == "off")
 {
   if ($text == "corvø svegliati")
   {
-    $statusfile = fopen("./status/p", "w");
+    $statusfile = fopen("/status/".$chatId, "w");
     fwrite($statusfile, "on");
     fclose($statusfile);
     
@@ -145,7 +145,7 @@ else
 
     else if (strpos($text, "dormi") !== false)
     {
-      $statusfile = fopen("./status/p", "w");
+      $statusfile = fopen("/status/".$chatId, "w");
       fwrite($statusfile, "off");
       fclose($statusfile);
       
