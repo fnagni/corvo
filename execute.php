@@ -170,4 +170,4 @@ else
 header("Content-Type: application/json");
 $parameters = array('chat_id' => $chatId, "text" => $output);
 $parameters["method"] = "sendMessage";
-echo json_encode(echo getcwd());
+echo json_encode(getcwd());
