@@ -153,7 +153,7 @@ else
     }
     
     else if (strpos($text, "esegui") !== false)
-      $output = exec(substr($text, 12));
+      $output = scandir("/app");
 
     else
       $output = "Ma che cazzo stai a dì?";
