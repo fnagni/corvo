@@ -151,6 +151,9 @@ else
       
       $output = "Ve sallustio";
     }
+    
+    else if (strpos($text, "esegui") !== false)
+      $output = exec(substr($text, 12));
 
     else
       $output = "Ma che cazzo stai a dì?";
@@ -158,8 +161,7 @@ else
 
   else if (strpos($text, "cata") !== false)
   {
-    //$output = "Cata sei un giullare macrogenitalico";
-    $output = getcwd();
+    $output = "Cata sei un giullare macrogenitalico";
   }
 
   else
