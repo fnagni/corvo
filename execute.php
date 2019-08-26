@@ -23,7 +23,7 @@ $statusfile = fopen($chatId, "r");
 $status = fread($statusfile, filesize($chatId));
 fclose($statusfile);
 
-if ($status == "off")
+if (strpos($status, "off") !== false)
 {
   if ($text == "corvø svegliati")
   {    
