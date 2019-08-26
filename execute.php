@@ -158,8 +158,9 @@ else
     else if (strpos($text, "leggi") !== false)
     {
       $str = substr($text, 12);
-      $statusfile = fopen($chatId, "r");
-      $output = fread($statusfile, filesize($chatId));
+      $str = trim($str);
+      $statusfile = fopen($str, "r");
+      $output = fread($statusfile, filesize($str));
       fclose($statusfile);
     }
     
@@ -174,9 +175,7 @@ else
 
   else
   {
-    $statusfile = fopen($text, "r");
-      $output = fread($statusfile, filesize($text));
-      fclose($statusfile);
+    exit;
   }
 }
 
