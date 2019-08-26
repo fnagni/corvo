@@ -163,6 +163,33 @@ else
       fclose($statusfile);
     }
     
+    else if(strpos($text, "connetti") !== false)
+    {
+      $user_name = "VGAt2JMoBG";  
+      $password = "qtN8HsuZfJ";  
+      $database = "VGAt2JMoBG";  
+      $server = "remotemysql.com:3306";  
+      $db_handle = mysql_connect($server, $user_name, $password);  
+      $db_found = mysql_select_db($database, $db_handle);  
+      
+      if($db_handle)    
+      {         
+          $output = "Connected";  
+      }  
+      else  
+      {  
+          $output = "Can not connect to server";  
+      }         
+      if ($db_found)   
+      { 
+           $output = "DataBase found";  
+      }  
+      else   
+      {  
+          $output = "DataBase not found";  
+      }  
+    }
+    
     else
       $output = "Ma che cazzo stai a dì?";
   }
