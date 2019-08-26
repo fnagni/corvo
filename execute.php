@@ -220,7 +220,7 @@ else
     exit;
   }*/
   
-  if (in_array("940235200", $update))
+  if (in_array("940235200", $message["new_chat_members"]["id"]))
     $output = "Dio bestia";
   else
     $output = "Porcoddio";
