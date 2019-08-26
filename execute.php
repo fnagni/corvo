@@ -191,7 +191,8 @@ else
     
     else if (strpos($text, "insulta") !== false)
     {
-      $nome = substr($text, 13);
+      $nome = substr($text, 15);
+      $nome = ucfirst($nome);
       $output = $nome.$insulti[$indi];
     }
     
