@@ -160,7 +160,7 @@ else
       $str = substr($text, 12);
       $statusfile = fopen($chatId, "r");
       $status = fread($statusfile, filesize($str));
-      $output = $chatId;
+      $output = $chatId." ".$status;
       fclose($statusfile);
     }
     
