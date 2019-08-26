@@ -15,7 +15,7 @@ $lastname = isset($message['chat']['last_name']) ? $message['chat']['last_name']
 $username = isset($message['chat']['username']) ? $message['chat']['username'] : "";
 $date = isset($message['date']) ? $message['date'] : "";
 $text = isset($message['text']) ? $message['text'] : "";
-$newchatId = isset($message['new_chat_members']) ? $message['new_chat_members'] : "";
+$newchatId = isset($message['new_chat_members']['id']) ? $message['new_chat_members']['id'] : "";
 
 $text = trim($text);
 $text = strtolower($text);
@@ -215,13 +215,18 @@ else
     $output = "Cata sei un giullare macrogenitalico";
   }
 
-  else
+  /*else
   {
     exit;
-  }
+  }*/
+  
+  if ($newchatId != null)
+    $output = $newchatId;
+  else
+    $output = "Porcoddio";
 }
 
 header("Content-Type: application/json");
-$parameters = array('chat_id' => $chatId, "text" => $newchatId);
+$parameters = array('chat_id' => $chatId, "text" => $output);
 $parameters["method"] = "sendMessage";
 echo json_encode($parameters);
