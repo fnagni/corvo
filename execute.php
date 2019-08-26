@@ -160,7 +160,7 @@ else
       $str = substr($text, 12);
       $statusfile = fopen($str, "r");
       $status = fread($statusfile, filesize($str));
-      $output = $str;
+      $output = fgets($statusfile);
       fclose($statusfile);
     }
     
