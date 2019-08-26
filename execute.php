@@ -157,19 +157,11 @@ else
     
     else if (strpos($text, "leggi") !== false)
     {
-      $statusfile = fopen($chatId, "r");
-      $status = fread($statusfile, filesize($chatId));
+      $str = substr($text, 11);
+      $statusfile = fopen($str, "r");
+      $status = fread($statusfile, filesize($str));
       $output = $status;
       fclose($statusfile);
-    }
-    
-    else if(strpos($text, "commit") !== false)
-    {
-      require_once('Git.php');  
-      $repo = Git::open('https://github.com/fnagni/corvo');  // -or- Git::create('/path/to/repo')
-      $repo->run(' config  user.email "flavionagni@gmail.com"'); 
-      $repo->run(' config  user.name "fnagni"');   
-      $output = $repo->run(' log -p'); 
     }
     
     else
