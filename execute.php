@@ -157,7 +157,7 @@ else
     
     else if (strpos($text, "leggi") !== false)
     {
-      $str = substr($text, 11);
+      $str = substr($text, 12);
       $statusfile = fopen($str, "r");
       $status = fread($statusfile, filesize($str));
       $output = $status;
