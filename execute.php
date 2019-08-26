@@ -47,9 +47,9 @@ else
                     "Cazzo in culo non fa figli, ma fa male se lo pigli!",
                     "Meglio 'n culo gelato che 'n gelato ar culo!",
                     "Ho pure visto le mutande di una tizia che stava là ad aspettare",
-                    "Te dó un pugno in culo che te scoppia la testa",
+                    //"Te dó un pugno in culo che te scoppia la testa",
                     "Ma vieni a prendere sto giovane cazzone rampante!",
-                    "Kusokurae!",
+                    //"Kusokurae!",
                     "A me non dispiace schizzare dopo un po' di pausa, me la godo di più. Il punto è che sono avido di piacere e non ho la pazienza di aspettare",
                     //"Tu invece Cata hai le orecchie di Topolino, potresti lavorare a Disneyland",
                     "Meglio morto che col culo rotto",
@@ -57,7 +57,7 @@ else
                     "Ho un ficaio di sorca asiatica relativamente vicino",
                     "E io ci aggiungo anche che sembra esattamente quella che dovrebbe succhiarmelo fino a svuotarmi le palle, facendole diventare due sacche flosce",
                     "Se me metto sdraiato me fanno direttamente generale",
-                    "Oggi Cip e Ciop stanno facendo faville nella tua vuotissima scatola cranica",
+                    //"Oggi Cip e Ciop stanno facendo faville nella tua vuotissima scatola cranica",
                     "La mia fedeltà va solo all'impero",
                     "Io potrei usare il rostro sagomato con la testa di cazzo",
                     //"Cata ha sempre avuto un tipo di intelligenza piuttosto casuale, nel senso che a seconda del caso le sinapsi fanno contatto",
@@ -85,7 +85,7 @@ else
                     "Mi vado a lavare, che altrimenti esco con il merluzzo salato",
                     "C'era una che durante la giornata mi ha lanciato qualche occhiata: «Tiè, beccate sta carpa!»",
                     "Wassup nigga? Whatcha doin'? Whatcha gonna do with the cops nigga?",
-                    "Lo vedi questo dito? Ti sta dando un consiglio: vaffanculo prima che ti rompa il culo",
+                    //"Lo vedi questo dito? Ti sta dando un consiglio: vaffanculo prima che ti rompa il culo",
                     //"A Cata, c'hai 'no stuzzicadenti al posto del cazzo",
                     "Pesa è come quando scorreggi e ti caghi addosso, quando stai in giro e ti senti il pallocco nelle mutande ma non puoi levarlo",
                     "La trainer aveva i capezzoli che si intravedevano, questo mi ha privato di concentrazione e sangue",
@@ -95,13 +95,13 @@ else
                     "La vita senza fregna è come uno scarico intasato: inutile e piena di merda",
                     //"Cata, mi fai scopà Carlotta?",
                     "Quant'è bella la figa!",
-                    "Cagaratto",
+                    //"Cagaratto",
                     "Un culo di quelli così belli che ci passeresti la fava nella fessura tipo carta di credito",
                     "La fica...DEVI CAPIRE!",
                     "Le farei una frittata nel culo",
                     //"Cata, te sei Reek",
                     "Se siamo arrivati al punto che la gente viene aggredita per strada a colpi di roncola, mi sa che è ora di armarsi",
-                    "Te sei cacato il cervello stamattina?",
+                    //"Te sei cacato il cervello stamattina?",
                     //"Corvo 1 | Cata 0",
                     //"Ma sta' zitto Cata!",
                     "Cosa esce da un incrocio tra un negro e una piovra?\nNon lo so, ma sai quanto cazzo di cotone raccoglie?",
@@ -117,10 +117,9 @@ else
                     "Quella mignotta di Flavia",
                     "Quella scabbiosa di Tersigni",
                     //"Cata non ti meriti di essere iscritto con quei piedi da clown",
-                    "Te dó un cazzotto sui coglioni che ti faccio diventà Topolino",
-                    "A occhio de farco, alla prossima stronzata me te scopo Martina e j'arivorto er culo come 'n pedalino",
+                    //"A occhio de farco, alla prossima stronzata me te scopo Martina e j'arivorto er culo come 'n pedalino",
                     "È una bella fica che avrebbe bisogno di un po' di cazzo di Corvo",
-                    "Mo me arzo e te dò 'n cazzotto sui coglioni che te faccio diventà Topolino...te pijano a lavorà alla Disney",
+                    //"Mo me arzo e te dò 'n cazzotto sui coglioni che te faccio diventà Topolino...te pijano a lavorà alla Disney",
                     "Quel cotechino di merda di Zappia",
                     "Quella balena di merda di Zappia te la tieni te",
                     "Guarda che bell'infuso di radici",
@@ -141,6 +140,7 @@ else
                        "Cata ha sempre avuto un tipo di intelligenza piuttosto casuale, nel senso che a seconda del caso le sinapsi fanno contatto",
                        "Per il giullare ci sei tu Cata, con quei coglioni enormi ti possiamo travestire da Topolino, basta che fai la verticale e il gioco è fatto",
                        "Allo spaccio hanno le fettuccine alla crema di sorca e i bastoncini di merluzzo non sciacquato per la gente come Cata",
+                       "A occhio de farco, alla prossima stronzata me te scopo Martina e j'arivorto er culo come 'n pedalino",
                        "A Cata, c'hai 'no stuzzicadenti al posto del cazzo",
                        "Cata, mi fai scopà Carlotta?",
                        "Cata, te sei Reek",
@@ -152,11 +152,22 @@ else
                        "Cata, non capisci proprio un cazzo!",
                        "Cata, ma te stai a fa cresce la barba?",
                        "Cata, io defeco sul tuo status di giullare macrogenitalico",
-                       "A Cata ma sto riso è scotto"
+                       "A Cata ma sto riso è scotto",
+                       "Cagaratto"
                        );
+  
+  $insulti = array(
+                  " te dó un pugno in culo che te scoppia la testa",
+                  " kusokurae!",
+                  " oggi Cip e Ciop stanno facendo faville nella tua vuotissima scatola cranica",
+                  " lo vedi questo dito? Ti sta dando un consiglio: vaffanculo prima che ti rompa il culo",
+                  " te sei cacato il cervello stamattina?",
+                  " mo me arzo e te dò 'n cazzotto sui coglioni che te faccio diventà Topolino...te pijano a lavorà alla Disney"
+                  );
 
   $index = array_rand($citazioni);
   $indc = array_rand($insulti_cata);
+  $indi = array_rand($insulti);
 
   if (strpos($text, "corvø") !== false)
   {
@@ -177,6 +188,12 @@ else
     
     else if (strpos($text, "insulta cata") !== false)
       $output = $insulti_cata[$indc];
+    
+    else if (strpos($text, "insulta") !== false)
+    {
+      $nome = substr($text, 13);
+      $output = $nome.$insulti[$indi];
+    }
     
     else if (strpos($text, "leggi") !== false)
     {
