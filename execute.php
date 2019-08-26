@@ -220,10 +220,10 @@ else
     exit;
   }*/
   
-  if ($newchatId != null)
-    $output = $newchatId;
+  if (in_array("new_chat_members", $message))
+    $output = "Dio bestia";
   else
-    $output = "Porco".$newchatId."dio";
+    $output = "Porcoddio";
 }
 
 header("Content-Type: application/json");
