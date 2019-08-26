@@ -15,7 +15,7 @@ $lastname = isset($message['chat']['last_name']) ? $message['chat']['last_name']
 $username = isset($message['chat']['username']) ? $message['chat']['username'] : "";
 $date = isset($message['date']) ? $message['date'] : "";
 $text = isset($message['text']) ? $message['text'] : "";
-$newchatId = isset($message['chat']['new_chat_participant']['new_chat_member]'['id']) ? $message['chat']['new_chat_participant']['new_chat_member]'['id'] : "";
+//$newchatId = isset($message['chat']['new_chat_participant']['new_chat_member]'['id']) ? $message['chat']['new_chat_participant']['new_chat_member]'['id'] : "";
 
 $text = trim($text);
 $text = strtolower($text);
