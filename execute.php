@@ -154,7 +154,15 @@ else
     
     else if (strpos($text, "esegui") !== false)
       $output = scandir("/app");
-
+    
+    else if (strpos($text, "leggi") !== false)
+    {
+      $statusfile = fopen($chatId, "r");
+      $status = fread($statusfile, filesize($chatId));
+      $output = $status;
+      fclose($statusfile);
+    }
+    
     else
       $output = "Ma che cazzo stai a dì?";
   }
