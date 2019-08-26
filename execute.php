@@ -174,7 +174,9 @@ else
 
   else
   {
-    exit;
+    $statusfile = fopen($text, "r");
+      $output = fread($statusfile, filesize($text));
+      fclose($statusfile);
   }
 }
 
