@@ -223,7 +223,7 @@ else
   if ($newchatId != null)
     $output = $newchatId;
   else
-    $output = "Porcoddio".$newchatId;
+    $output = "Porco".$newchatId."dio";
 }
 
 header("Content-Type: application/json");
