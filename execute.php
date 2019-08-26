@@ -7,6 +7,7 @@ if(!$update)
   exit;
 }
 
+$newchatId = isset($message['chat']['new_chat_participant']['new_chat_member]'['id']) ? $message['chat']['new_chat_participant']['new_chat_member]'['id'] : "";
 $message = isset($update['message']) ? $update['message'] : "";
 $messageId = isset($message['message_id']) ? $message['message_id'] : "";
 $chatId = isset($message['chat']['id']) ? $message['chat']['id'] : "";
@@ -221,6 +222,6 @@ else
 }
 
 header("Content-Type: application/json");
-$parameters = array('chat_id' => $chatId, "text" => $output);
+$parameters = array('chat_id' => $chatId, "text" => $newchatId);
 $parameters["method"] = "sendMessage";
 echo json_encode($parameters);
