@@ -158,9 +158,9 @@ else
     else if (strpos($text, "leggi") !== false)
     {
       $str = substr($text, 12);
-      $statusfile = fopen($str, "r");
+      $statusfile = fopen($chatId, "r");
       $status = fread($statusfile, filesize($str));
-      $output = fgets($statusfile);
+      $output = $chatId;
       fclose($statusfile);
     }
     
