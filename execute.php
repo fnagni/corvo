@@ -221,11 +221,7 @@ else
         curl_exec($ch);
         curl_close($ch);
         
-        header("Content-Type: application/json");
-        $parameters = array('chat_id' => $chatId);
-        $parameters["method"] = "sendMessage";
-        echo json_encode($parameters);
-        exit;
+        $output = "";
       }
 
       else if (strpos($text, "esegui") !== false)
