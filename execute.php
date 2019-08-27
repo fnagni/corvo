@@ -222,6 +222,10 @@ else
   
   if ($newchatId == "940235200")
     $output = "Dio bestia";
+  
+  else if ($newchatId == null)
+    $output = "Dio null";
+    
   else
     $output = $newchatId;
 }
