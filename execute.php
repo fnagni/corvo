@@ -206,7 +206,7 @@ else
         $bot_url = "https://api.telegram.org/bot940235200:AAGw5gzS4B_EpzzLlw58CSyJtqvZr1vcCRg/";
         $url = $bot_url."sendPhoto?chat_id=".$chat_id;
 
-        $post_fields = array('chat_id' => $chat_id,
+        $post_fields = array('chat_id' => $chatId,
         'photo' => new CURLFile(realpath($path))
         );
 
