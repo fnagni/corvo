@@ -220,8 +220,6 @@ else
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         curl_exec($ch);
         curl_close($ch);
-        
-        $output = "";
       }
 
       else if (strpos($text, "esegui") !== false)
