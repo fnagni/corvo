@@ -31,7 +31,7 @@ if (strpos($status, "off") !== false)
 {
   if ($text == "corvø svegliati")
   {    
-    $statusfile = fopen($chatId, "w");
+    $statusfile = fopen("/app/status/".$chatId, "w");
     fwrite($statusfile, "on");
     fclose($statusfile);
     
@@ -191,7 +191,7 @@ else
 
       else if (strpos($text, "dormi") !== false)
       {
-        $statusfile = fopen($chatId, "w");
+        $statusfile = fopen("/app/status/".$chatId, "w");
         fwrite($statusfile, "off");
         fclose($statusfile);
 
