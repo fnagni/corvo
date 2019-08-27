@@ -205,7 +205,7 @@ else
         $path = $images[rand(0, count($images) - 1)];
         
         $botUrl = "https://api.telegram.org/bot" . BOT_TOKEN . "/sendPhoto";
-        $postFields = array('chat_id' => $chatId, 'photo' => new CURLFile(realpath($path)), 'caption' => $text);
+        $postFields = array('chat_id' => $chatId, 'photo' => new CURLFile(realpath($path)));
         $ch = curl_init(); 
         curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-Type:multipart/form-data"));
         curl_setopt($ch, CURLOPT_URL, $botUrl); 
