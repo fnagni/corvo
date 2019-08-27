@@ -16,6 +16,7 @@ $username = isset($message['chat']['username']) ? $message['chat']['username'] :
 $date = isset($message['date']) ? $message['date'] : "";
 $text = isset($message['text']) ? $message['text'] : "";
 $newchatId = isset($message['new_chat_member']['id']) ? $message['new_chat_member']['id'] : "";
+$leftchatId = isset($message['left_chat_member']['id']) ? $message['left_chat_member']['id'] : "";
 
 $text = trim($text);
 $text = strtolower($text);
@@ -220,14 +221,14 @@ else
     exit;
   }*/
   
-  if ($newchatId == "940235200")
+  if ($newchatId == "940235200" || $leftchatId == "940235200")
     $output = "Dio bestia";
   
   else if ($newchatId == null)
     $output = "Dio null";
     
   else
-    $output = $newchatId;
+    $output = $newchatId." ".$leftchatId;
 }
 
 header("Content-Type: application/json");
