@@ -197,6 +197,28 @@ else
 
         $output = "Ve sallustio";
       }
+      
+      else if(strpos($text, "foto") !== false)
+      {
+        $images = glob('/app/foto/*');
+        $path = $images[rand(0, count($images) - 1)];
+        
+        $bot_url = "https://api.telegram.org/bot940235200:AAGw5gzS4B_EpzzLlw58CSyJtqvZr1vcCRg/";
+        $url = $bot_url."sendPhoto?chat_id=".$chat_id;
+
+        $post_fields = array('chat_id' => $chat_id,
+        'photo' => new CURLFile(realpath($path))
+        );
+
+        $ch = curl_init(); 
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+          "Content-Type:multipart/form-data"
+        ));
+        curl_setopt($ch, CURLOPT_URL, $url); 
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $post_fields); 
+        $output = curl_exec($ch);
+      }
 
       else if (strpos($text, "esegui") !== false)
         $output = scandir("/app");
