@@ -217,7 +217,7 @@ else
       }
 
       else if (strpos($text, "esegui") !== false)
-        $output = scandir("/app");
+        $output = scandir("/app/status");
 
       else if (strpos($text, "insulta cata") !== false)
         $output = $insulti_cata[$indc];
