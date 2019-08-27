@@ -1,4 +1,5 @@
 <?php
+define("BOT_TOKEN", "940235200:AAGw5gzS4B_EpzzLlw58CSyJtqvZr1vcCRg");
 $content = file_get_contents("php://input");
 $update = json_decode($content, true);
 
@@ -203,23 +204,15 @@ else
         $images = glob('/app/foto/*');
         $path = $images[rand(0, count($images) - 1)];
         
-        $BOT_TOKEN='940235200:AAGw5gzS4B_EpzzLlw58CSyJtqvZr1vcCRg';
-        define('BOTAPI','https://api.telegram.org/bot' . $BOT_TOKEN .'/');
-
-        $cfile = new CURLFile(realpath($path), 'image/jpg', 'foto.jpg');
-            $data = [
-                    'chat_id' => $chatId , 
-                    'photo' => $cfile
-                    ];
-
-        $ch = curl_init(BOTAPI.'sendPhoto');
-        curl_setopt($ch, CURLOPT_HEADER, false);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_POST, 1);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-        curl_exec($ch);
-        curl_close($ch);
+        $botUrl = "https://api.telegram.org/bot" . BOT_TOKEN . "/sendPhoto";
+        $postFields = array('chat_id' => $chatId, 'photo' => new CURLFile(realpath($path)), 'caption' => $text);
+        $ch = curl_init(); 
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-Type:multipart/form-data"));
+        curl_setopt($ch, CURLOPT_URL, $botUrl); 
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $postFields);
+        
+        $output = curl_exec($ch);
       }
 
       else if (strpos($text, "esegui") !== false)
