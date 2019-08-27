@@ -223,7 +223,7 @@ else
   if ($newchatId == "940235200")
     $output = "Dio bestia";
   else
-    $output = "Porcoddio";
+    $output = $newchatId;
 }
 
 header("Content-Type: application/json");
