@@ -212,7 +212,8 @@ else
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
         curl_setopt($ch, CURLOPT_POSTFIELDS, $postFields);
         
-        $output = curl_exec($ch);
+        curl_exec($ch);
+        exit;
       }
 
       else if (strpos($text, "esegui") !== false)
