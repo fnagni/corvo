@@ -23,8 +23,8 @@ $leftchatFn = isset($message['left_chat_member']['first_name']) ? $message['left
 $text = trim($text);
 $text = strtolower($text);
 
-$statusfile = fopen($chatId, "r");
-$status = fread($statusfile, filesize($chatId));
+$statusfile = fopen("/app/status/".$chatId, "r");
+$status = fread($statusfile, filesize("/app/status/".$chatId));
 fclose($statusfile);
 
 if (strpos($status, "off") !== false)
@@ -45,7 +45,7 @@ if (strpos($status, "off") !== false)
 else
 {
   if ($newchatId == "940235200")
-    $output = "A chicchi ecchime qua!";
+    $output = "A chicchi, ecchime qua!";
   
   else if ($newchatId != null && $newchatId != "940235200")
     $output = "Benvenuto ".$newchatFn." vedi di comportarti bene o ti caco nelle scarpe";
@@ -215,8 +215,8 @@ else
       {
         $str = substr($text, 12);
         $str = trim($str);
-        $statusfile = fopen($str, "r");
-        $output = fread($statusfile, filesize($str));
+        $statusfile = fopen("/app/status/".$str, "r");
+        $output = fread($statusfile, filesize("/app/status/".$str));
         fclose($statusfile);
       }
 
