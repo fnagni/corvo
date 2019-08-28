@@ -251,11 +251,11 @@ else
         {
           $conn = new PDO("mysql:host=$servername;dbname=$username", $username, $password);
           $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-          $stmt = $conn->prepare("SELECT val FROM accessi WHERE pk = 37554365"); 
-          $stmt->execute();
-          $output = $id;
-          $output = $stmt->setFetchMode(PDO::FETCH_ASSOC); 
-          foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) { $output = $v; }
+          
+          foreach ($conn->query("SELECT val FROM accessi WHERE pk = ".$id) as $row)
+          {
+            $output = $row['val']." ".$id;
+          }
         }
         
         catch(PDOException $e)
