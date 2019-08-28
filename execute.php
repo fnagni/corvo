@@ -242,6 +242,7 @@ else
       {
         $id = substr($text, 15);
         $id = trim($id);
+        $ide = "5643378";
         
         $servername = "remotemysql.com:3306";
         $username = "VGAt2JMoBG";
@@ -252,15 +253,15 @@ else
           $conn = new PDO("mysql:host=$servername;dbname=$username", $username, $password);
           $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
           
-          foreach ($conn->query("SELECT val FROM accessi WHERE pk = ".$id) as $row)
+          foreach ($conn->query("SELECT val FROM accessi WHERE pk = ".$ide) as $row)
           {
-            $output = $row['val']." ".$id;
+            $output = $row['val'];
           }
         }
         
         catch(PDOException $e)
         {
-          $output = "Connection failed: ".$e->getMessage()." ".$id;
+          $output = "Connection failed: ".$e->getMessage();
         }
           
         $conn = null;
