@@ -264,6 +264,32 @@ else
         $conn = null;
       }
       
+      else if(strpos($text, "aggiorna") !== false)
+      {
+        $id = substr($text, 15);
+        $id = trim($id);
+        
+        $servername = "remotemysql.com:3306";
+        $username = "VGAt2JMoBG";
+        $password = "qtN8HsuZfJ";
+
+        try 
+        {
+          $conn = new PDO("mysql:host=$servername;dbname=$username", $username, $password);
+          $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+          
+          $update = $conn->exec("UPDATE accessi SET val = 'alvaro' WHERE pk = ".$id);
+          $output = $conn->lastInsertId();
+        }
+        
+        catch(PDOException $e)
+        {
+          $output = "Connection failed: ".$e->getMessage();
+        }
+          
+        $conn = null;
+      }
+      
       else if(strpos($text, "connetti") !== false)
       {
         $id = substr($text, 15);
