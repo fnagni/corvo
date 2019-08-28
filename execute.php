@@ -245,8 +245,7 @@ else
         $password = "qtN8HsuZfJ";
 
         try {
-              $conn = new PDO("mysql:host=$servername;dbname=$username", $username, $password);
-              // set the PDO error mode to exception
+              $conn = new PDO("mysql:host=".$servername.";dbname=".$username, $username, $password);
               $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
               $output = "Connected successfully"; 
             }
