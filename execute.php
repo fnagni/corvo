@@ -254,8 +254,8 @@ else
           $stmt = $conn->prepare("SELECT val FROM accessi WHERE pk = 37554365"); 
           $stmt->execute();
           $output = $id;
-          $result = $stmt->setFetchMode(PDO::FETCH_ASSOC); 
-          foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) { $output = $v." ".$id; }
+          $output = $stmt->setFetchMode(PDO::FETCH_ASSOC); 
+          foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) { $output = $v; }
         }
         
         catch(PDOException $e)
