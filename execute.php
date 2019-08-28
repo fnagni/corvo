@@ -247,21 +247,23 @@ else
         $username = "VGAt2JMoBG";
         $password = "qtN8HsuZfJ";
 
-        try {
-              $conn = new PDO("mysql:host=$servername;dbname=$username", $username, $password);
-              $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-              $stmt = $conn->prepare("SELECT val FROM accessi WHERE pk = ".$id); 
-              $stmt->execute();
-              
-              $result = $stmt->setFetchMode(PDO::FETCH_ASSOC); 
-              foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) { $output = $v." ".$id; }
+        try 
+        {
+          $conn = new PDO("mysql:host=$servername;dbname=$username", $username, $password);
+          $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+          $stmt = $conn->prepare("SELECT val FROM accessi WHERE pk = $id"); 
+          $stmt->execute();
+
+          $result = $stmt->setFetchMode(PDO::FETCH_ASSOC); 
+          foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) { $output = $v." ".$id; }
+        }
         
         catch(PDOException $e)
-            {
-              $output = "Connection failed: " . $e->getMessage();
-            }
+        {
+          $output = "Connection failed: " . $e->getMessage();
+        }
           
-          $conn = null;
+        $conn = null;
       }
       
       else
