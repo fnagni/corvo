@@ -238,11 +238,10 @@ else
         fclose($statusfile);
       }
       
-      else if(strpos($text, "connetti") !== false)
+      else if(strpos($text, "aggiungi") !== false)
       {
         $id = substr($text, 15);
         $id = trim($id);
-        $ide = "5643378";
         
         $servername = "remotemysql.com:3306";
         $username = "VGAt2JMoBG";
@@ -253,7 +252,33 @@ else
           $conn = new PDO("mysql:host=$servername;dbname=$username", $username, $password);
           $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
           
-          foreach ($conn->query("SELECT val FROM accessi WHERE pk = ".$ide) as $row)
+          $insert = $conn->exec("INSERT INTO accessi (pk, val) VALUES ($id, 'pollo')");
+          $output = $conn->lastInsertId();
+        }
+        
+        catch(PDOException $e)
+        {
+          $output = "Connection failed: ".$e->getMessage();
+        }
+          
+        $conn = null;
+      }
+      
+      else if(strpos($text, "connetti") !== false)
+      {
+        $id = substr($text, 15);
+        $id = trim($id);
+        
+        $servername = "remotemysql.com:3306";
+        $username = "VGAt2JMoBG";
+        $password = "qtN8HsuZfJ";
+
+        try 
+        {
+          $conn = new PDO("mysql:host=$servername;dbname=$username", $username, $password);
+          $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+          
+          foreach ($conn->query("SELECT val FROM accessi WHERE pk = ".$id) as $row)
           {
             $output = $row['val'];
           }
