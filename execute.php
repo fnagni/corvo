@@ -3,6 +3,23 @@ define("BOT_TOKEN", "940235200:AAGw5gzS4B_EpzzLlw58CSyJtqvZr1vcCRg");
 $content = file_get_contents("php://input");
 $update = json_decode($content, true);
 
+function apriconn()
+{
+  $servername = "remotemysql.com:3306";
+  $username = "VGAt2JMoBG";
+  $password = "qtN8HsuZfJ";
+  
+  $conn = new PDO("mysql:host=$servername;dbname=$username", $username, $password);
+  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  
+  return $conn;
+}
+
+function chiudiconn($conn)
+{
+  $conn = null;
+}
+
 if(!$update)
 {
   exit;
@@ -228,15 +245,6 @@ else
         $nome = ucfirst($nome);
         $output = $nome.$insulti[$indi];
       }
-
-      else if (strpos($text, "leggi") !== false)
-      {
-        $str = substr($text, 12);
-        $str = trim($str);
-        $statusfile = fopen("/app/status/".$str, "r");
-        $output = fread($statusfile, filesize("/app/status/".$str));
-        fclose($statusfile);
-      }
       
       else if(strpos($text, "aggiungi") !== false)
       {
@@ -253,7 +261,6 @@ else
           $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
           
           $insert = $conn->exec("INSERT INTO accessi (pk, val) VALUES ($id, 'pollo')");
-          $output = $conn->lastInsertId();
         }
         
         catch(PDOException $e)
@@ -279,7 +286,6 @@ else
           $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
           
           $update = $conn->exec("UPDATE accessi SET val = 'alvaro' WHERE pk = ".$id);
-          $output = $conn->lastInsertId();
         }
         
         catch(PDOException $e)
@@ -294,17 +300,10 @@ else
       {
         $id = substr($text, 15);
         $id = trim($id);
-        
-        $servername = "remotemysql.com:3306";
-        $username = "VGAt2JMoBG";
-        $password = "qtN8HsuZfJ";
 
         try 
         {
-          $conn = new PDO("mysql:host=$servername;dbname=$username", $username, $password);
-          $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-          
-          foreach ($conn->query("SELECT val FROM accessi WHERE pk = ".$id) as $row)
+          foreach (apriconn()->query("SELECT val FROM accessi WHERE pk = ".$id) as $row)
           {
             $output = $row['val'];
           }
@@ -315,7 +314,7 @@ else
           $output = "Connection failed: ".$e->getMessage();
         }
           
-        $conn = null;
+        chiudiconn(apriconn());
       }
       
       else
