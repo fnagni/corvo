@@ -240,6 +240,9 @@ else
       
       else if(strpos($text, "connetti") !== false)
       {
+        $id = substr($text, 15);
+        $id = trim($id);
+        
         $servername = "remotemysql.com:3306";
         $username = "VGAt2JMoBG";
         $password = "qtN8HsuZfJ";
@@ -247,13 +250,18 @@ else
         try {
               $conn = new PDO("mysql:host=$servername;dbname=$username", $username, $password);
               $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-              $output = "Connected successfully"; 
-            }
+              $stmt = $conn->prepare("SELECT val FROM accessi WHERE pk = ".$id); 
+              $stmt->execute();
+              
+              $result = $stmt->setFetchMode(PDO::FETCH_ASSOC); 
+              foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) { $output = $v." ".$id; }
         
         catch(PDOException $e)
             {
               $output = "Connection failed: " . $e->getMessage();
             }
+          
+          $conn = null;
       }
       
       else
