@@ -255,7 +255,7 @@ else
           $stmt->execute();
 
           $result = $stmt->setFetchMode(PDO::FETCH_ASSOC); 
-          foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) { $output = $v." ".$id; }
+          foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) { $output = "diommerda"/*$v." ".$id*/; }
         }
         
         catch(PDOException $e)
