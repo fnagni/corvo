@@ -251,16 +251,16 @@ else
         {
           $conn = new PDO("mysql:host=$servername;dbname=$username", $username, $password);
           $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-          $stmt = $conn->prepare("SELECT val FROM accessi WHERE pk = $id"); 
+          $stmt = $conn->prepare("SELECT val FROM accessi WHERE pk = 37554365"); 
           $stmt->execute();
 
           $result = $stmt->setFetchMode(PDO::FETCH_ASSOC); 
-          foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) { $output = "diommerda"/*$v." ".$id*/; }
+          foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) { $output = $v." ".$id; }
         }
         
         catch(PDOException $e)
         {
-          $output = "Connection failed: " . $e->getMessage();
+          $output = "Connection failed: ".$e->getMessage()." ".$id;
         }
           
         $conn = null;
