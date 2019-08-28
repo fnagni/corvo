@@ -237,7 +237,26 @@ else
         $output = fread($statusfile, filesize("/app/status/".$str));
         fclose($statusfile);
       }
+      
+      else if(strpos($text, "connetti") !== false)
+      {
+        $servername = "remotemysql.com:3306";
+        $username = "	VGAt2JMoBG";
+        $password = "qtN8HsuZfJ";
 
+        try {
+              $conn = new PDO("mysql:host=$servername;dbname=$username", $username, $password);
+              // set the PDO error mode to exception
+              $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+              $output = "Connected successfully"; 
+            }
+        
+        catch(PDOException $e)
+            {
+              $output = "Connection failed: " . $e->getMessage();
+            }
+      }
+      
       else
         $output = "Ma che cazzo stai a dì?";
     }
