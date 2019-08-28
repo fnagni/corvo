@@ -241,11 +241,11 @@ else
       else if(strpos($text, "connetti") !== false)
       {
         $servername = "remotemysql.com:3306";
-        $username = "	VGAt2JMoBG";
+        $username = "VGAt2JMoBG";
         $password = "qtN8HsuZfJ";
 
         try {
-              $conn = new PDO("mysql:host=".$servername.";dbname=".$username, $username, $password);
+              $conn = new PDO("mysql:host=$servername;dbname=$username", $username, $password);
               $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
               $output = "Connected successfully"; 
             }
