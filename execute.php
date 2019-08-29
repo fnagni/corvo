@@ -53,7 +53,7 @@ if ($user == null)
 }
 
 $conn = null;
-  } catch(PDOException $e) { $output = "Connection failed: ".$e->getMessage(); }
+  } catch(PDOException $e) { $output1 = "Connection failed: ".$e->getMessage(); }
 
 if (strpos($status, "off") !== false)
 {
@@ -281,6 +281,6 @@ else
 }
 
 header("Content-Type: application/json");
-$parameters = array('chat_id' => $chatId, "text" => $output);
+$parameters = array('chat_id' => $chatId, "text" => $output1);
 $parameters["method"] = "sendMessage";
 echo json_encode($parameters);
