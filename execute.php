@@ -281,6 +281,6 @@ else
 }
 
 header("Content-Type: application/json");
-$parameters = array('chat_id' => $chatId, "text" => $output1);
+$parameters = array('chat_id' => $chatId, "text" => $user);
 $parameters["method"] = "sendMessage";
 echo json_encode($parameters);
