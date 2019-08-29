@@ -13,7 +13,7 @@ $messageId = isset($message['message_id']) ? $message['message_id'] : "";
 $chatId = isset($message['chat']['id']) ? $message['chat']['id'] : "";
 $firstname = isset($message['chat']['first_name']) ? $message['chat']['first_name'] : "";
 $lastname = isset($message['chat']['last_name']) ? $message['chat']['last_name'] : "";
-$username = isset($message['chat']['username']) ? $message['chat']['username'] : "";
+$user_name = isset($message['chat']['username']) ? $message['chat']['username'] : "";
 $title = isset($message['chat']['title']) ? $message['chat']['title'] : "";
 $date = isset($message['date']) ? $message['date'] : "";
 $text = isset($message['text']) ? $message['text'] : "";
@@ -37,18 +37,18 @@ foreach ($conn->query("SELECT val FROM accessi WHERE pk = ".$chatId) as $row)
   $status = $row['val'];
 }
 
-foreach ($conn->query("SELECT user FROM utenti WHERE pk = ".$chatId) as $row)
+foreach ($conn->query("SELECT user FROM utenti WHERE pk = ".$chatId) as $row1)
 {
-  $user = $row['user'];
+  $user = $row1['user'];
 }
 
 if ($user == null)
 {
   if ($chatId < 0)
-    $insert = $conn->exec("INSERT INTO utenti (pk, user) VALUES ($chatId, $title)");
+    $insert1 = $conn->exec("INSERT INTO utenti (pk, user) VALUES ($chatId, $title)");
   
   else
-    $insert = $conn->exec("INSERT INTO utenti (pk, user) VALUES ($chatId, $username)");
+    $insert2 = $conn->exec("INSERT INTO utenti (pk, user) VALUES ($chatId, $user_name)");
 }
 
 $conn = null;
