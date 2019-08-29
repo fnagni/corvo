@@ -37,12 +37,11 @@ foreach ($conn->query("SELECT val FROM accessi WHERE pk = ".$chatId) as $row)
   $status = $row['val'];
 }
 
-foreach ($conn->query("SELECT user FROM utenti WHERE pk = ".$chatId) as $row1)
+foreach ($conn->query("SELECT user FROM utenti WHERE pk = ".$chatId) as $row)
 {
-  $user = $row1['user'];
+  $user = $row['user'];
 }
 
-try{
 if ($user == null)
 {
   if ($chatId < 0)
@@ -53,7 +52,6 @@ if ($user == null)
 }
 
 $conn = null;
-  } catch(PDOException $e) { $output1 = "Connection failed: ".$e->getMessage(); }
 
 if (strpos($status, "off") !== false)
 {
@@ -281,6 +279,6 @@ else
 }
 
 header("Content-Type: application/json");
-$parameters = array('chat_id' => $chatId, "text" => $output1);
+$parameters = array('chat_id' => $chatId, "text" => $output);
 $parameters["method"] = "sendMessage";
 echo json_encode($parameters);
