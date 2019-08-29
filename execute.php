@@ -29,7 +29,6 @@ $servername = "remotemysql.com:3306";
 $username = "VGAt2JMoBG";
 $password = "qtN8HsuZfJ";
 
-  try{
 $conn = new PDO("mysql:host=$servername;dbname=$username", $username, $password);
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -43,13 +42,14 @@ foreach ($conn->query("SELECT user FROM utenti WHERE pk = ".$chatId) as $row1)
   $user = $row1['user'];
 }
 
+try{
 if ($user == null)
 {
   if ($chatId < 0)
-    $insert1 = $conn->exec("INSERT INTO utenti (pk, user) VALUES ($chatId, $title)");
+    $insert = $conn->exec("INSERT INTO utenti (pk, user) VALUES ($chatId, $title)");
   
   else
-    $insert2 = $conn->exec("INSERT INTO utenti (pk, user) VALUES ($chatId, $user_name)");
+    $insert = $conn->exec("INSERT INTO utenti (pk, user) VALUES ($chatId, $user_name)");
 }
 
 $conn = null;
