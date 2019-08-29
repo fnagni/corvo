@@ -25,6 +25,55 @@ $leftchatFn = isset($message['left_chat_member']['first_name']) ? $message['left
 $text = trim($text);
 $text = strtolower($text);
 
+if (strpos($text, "aggiungi") !== false)
+{
+  do
+  {
+    $output = "Cosa vuoi aggiungere?";
+
+    header("Content-Type: application/json");
+    $parameters = array('chat_id' => $chatId, "text" => $output);
+    $parameters["method"] = "sendMessage";
+    echo json_encode($parameters);
+    
+    $content = file_get_contents("php://input");
+    $update = json_decode($content, true);
+
+    if(!$update)
+    {
+      exit;
+    }
+
+    $message = isset($update['message']) ? $update['message'] : "";
+    $messageId = isset($message['message_id']) ? $message['message_id'] : "";
+    $chatId = isset($message['chat']['id']) ? $message['chat']['id'] : "";
+    $firstname = isset($message['chat']['first_name']) ? $message['chat']['first_name'] : "";
+    $lastname = isset($message['chat']['last_name']) ? $message['chat']['last_name'] : "";
+    $user_name = isset($message['chat']['username']) ? $message['chat']['username'] : "";
+    $title = isset($message['chat']['title']) ? $message['chat']['title'] : "";
+    $date = isset($message['date']) ? $message['date'] : "";
+    $text = isset($message['text']) ? $message['text'] : "";
+    $newchatId = isset($message['new_chat_member']['id']) ? $message['new_chat_member']['id'] : "";
+    $newchatFn = isset($message['new_chat_member']['first_name']) ? $message['new_chat_member']['first_name'] : "";
+    $leftchatId = isset($message['left_chat_member']['id']) ? $message['left_chat_member']['id'] : "";
+    $leftchatFn = isset($message['left_chat_member']['first_name']) ? $message['left_chat_member']['first_name'] : "";
+
+    $text = trim($text);
+    $text = strtolower($text);
+  }
+  while (strpos($text, "$") === false)
+  
+    $output = "Aggiunto";
+
+    header("Content-Type: application/json");
+    $parameters = array('chat_id' => $chatId, "text" => $output);
+    $parameters["method"] = "sendMessage";
+    echo json_encode($parameters);
+}
+
+else
+  exit;
+
 $servername = "remotemysql.com:3306";
 $username = "VGAt2JMoBG";
 $password = "qtN8HsuZfJ";
