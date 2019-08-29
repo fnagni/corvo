@@ -46,10 +46,10 @@ try{
 if ($user == null)
 {
   if ($chatId < 0)
-    $insert = $conn->exec("INSERT INTO utenti (pk, user) VALUES ($chatId, $title)");
+    $insert = $conn->exec("INSERT INTO utenti (pk, user) VALUES ($chatId, "'".$title."'")");
   
   else
-    $insert = $conn->exec("INSERT INTO utenti (pk, user) VALUES ($chatId, $user_name)");
+    $insert = $conn->exec("INSERT INTO utenti (pk, user) VALUES ($chatId, "'".$user_name."'")");
 }
 
 $conn = null;
