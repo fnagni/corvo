@@ -28,7 +28,8 @@ $text = strtolower($text);
 $servername = "remotemysql.com:3306";
 $username = "VGAt2JMoBG";
 $password = "qtN8HsuZfJ";
-  
+
+  try{
 $conn = new PDO("mysql:host=$servername;dbname=$username", $username, $password);
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -52,6 +53,7 @@ if ($user == null)
 }
 
 $conn = null;
+  } catch(PDOException $e) { $output = "Connection failed: ".$e->getMessage(); }
 
 if (strpos($status, "off") !== false)
 {
