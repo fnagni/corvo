@@ -14,6 +14,7 @@ $chatId = isset($message['chat']['id']) ? $message['chat']['id'] : "";
 $firstname = isset($message['chat']['first_name']) ? $message['chat']['first_name'] : "";
 $lastname = isset($message['chat']['last_name']) ? $message['chat']['last_name'] : "";
 $username = isset($message['chat']['username']) ? $message['chat']['username'] : "";
+$title = isset($message['chat']['title']) ? $message['chat']['title'] : "";
 $date = isset($message['date']) ? $message['date'] : "";
 $text = isset($message['text']) ? $message['text'] : "";
 $newchatId = isset($message['new_chat_member']['id']) ? $message['new_chat_member']['id'] : "";
@@ -34,6 +35,20 @@ $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 foreach ($conn->query("SELECT val FROM accessi WHERE pk = ".$chatId) as $row)
 {
   $status = $row['val'];
+}
+
+foreach ($conn->query("SELECT user FROM utenti WHERE pk = ".$chatId) as $row)
+{
+  $user = $row['user'];
+}
+
+if ($user == null)
+{
+  if ($chatId < 0)
+    $insert = $conn->exec("INSERT INTO utenti (pk, user) VALUES ($chatId, $title)");
+  
+  else
+    $insert = $conn->exec("INSERT INTO utenti (pk, user) VALUES ($chatId, $username)");
 }
 
 $conn = null;
