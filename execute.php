@@ -152,7 +152,12 @@ else
                       "1 a 0 pe' la NASA!",
                       "Ma se trovo una rumena strafica e non zozza me la trombo uguale, perchè io, per la fica, vado al di là di queste cose",
                       "Trump è solo un cazzone",
-                      "In compenso ho attaccato bottone con una tizia a inizio lezione, ma poi si è spostata, dato che stavamo in piedi perché non c'era posto. Probabilmente si è resa conto che se avesse continuato, saremmo finiti a scopare e non sarebbe riuscita a seguire"
+                      "In compenso ho attaccato bottone con una tizia a inizio lezione, ma poi si è spostata, dato che stavamo in piedi perché non c'era posto. Probabilmente si è resa conto che se avesse continuato, saremmo finiti a scopare e non sarebbe riuscita a seguire",
+                      "È anche una di quelle con la faccia un po' scazzata, che glielo infileresti in gola solo per rieducarla",
+                      "Ma sì, sta lì che sembra che qualcuno le abbia cacato nella borsa. Aò, fallo un sorriso",
+                      "Se, glielo faccio fare io un esercizio per la circolazione periferica. Del mio seme nel suo utero però",
+                      "L'avrei proprio sbattuta al muro e scopata fino a farla svenire",
+                      "Ma non tutte le scoperei con brutalità.\nAlcune in modo dolce, sussurrando loro all'orecchio come non si riusciranno a sedere quando avrò finito.\nAltre invece con la stessa delicatezza di un grizzly uscito dal letargo che trova una preda"
                       );
 
     $insulti_cata = array(
