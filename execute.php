@@ -26,8 +26,8 @@ $text = trim($text);
 $text = strtolower($text);
 
 $servername = "remotemysql.com:3306";
-$username = "VGAt2JMoBG";
-$password = "qtN8HsuZfJ";
+$username = "oDY1bXLIza";
+$password = "2FiaQKJzNz";
 
 $conn = new PDO("mysql:host=$servername;dbname=$username", $username, $password);
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -96,14 +96,24 @@ else
                       "Meglio morto che col culo rotto",
                       "C'ha l'età che me se deve scopà",
                       "Ho un ficaio di sorca asiatica relativamente vicino",
+                      "So un po' di giorni che le palle mi girano come le pale di un elicottero",
                       "E io ci aggiungo anche che sembra esattamente quella che dovrebbe succhiarmelo fino a svuotarmi le palle, facendole diventare due sacche flosce",
                       "Se me metto sdraiato me fanno direttamente generale",
                       "La mia fedeltà va solo all'impero",
+                      "Dio è lesso",
                       "Io potrei usare il rostro sagomato con la testa di cazzo",
                       "Comunque sarei contento anche solo di avere il mio posto nell'Impero, senza esserne l'imperatore",
                       "Io l'avrei fottuta selvaggiamente, anche perché ho le palle piene e la cappella rovente",
                       "Ma ora come ora, fotterei QUASI tutto",
                       "Avoja, sarebbe da colpirla sulle labbra con la cappella fino a che non schizzi",
+                      "Te do il cazzo, altro che una mano. Una bella iniezione di conoscenza dell'italiano, un clistere o una sorta di lavanda gastrica",
+                      "La polvere gliela levo dall'intestino quando la inculo con la forza di mille soli",
+                      "Mi sa che è la volta buona che cerco di bucarla",
+                      "Ma io sono carico di testosterone h24",
+                      "Io provo pietà per quella che capiterà sotto il torchio dopo tutto questo calvario",
+                      "Solo che mi viene voglia di scopare dopo l'allenamento, che sto carico e sfonderei pure un muro",
+                      "Vabbè, io sturo un tubo dopo ogni allenamento",
+                      "Porcoddio che voglia di sborrare",
                       "E poi ricorda sempre che non c'è persona che si merita il mio voto",
                       "Se mi metto sulla punta del cazzo, invece, posso toccarle lo scalpo con la punta del naso",
                       "Frappetta va posseduta come una cavalla",
