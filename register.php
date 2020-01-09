@@ -1,7 +1,7 @@
 <?php
 
 // PARAMETRI DA MODIFICARE
-$WEBHOOK_URL = 'www.pizzadj.it/crv/exec.php';
+$WEBHOOK_URL = 'https://corvo.herokuapp.com/execute.php';
 $BOT_TOKEN = '940235200:AAGw5gzS4B_EpzzLlw58CSyJtqvZr1vcCRg';
 
 // NON APPORTARE MODIFICHE NEL CODICE SEGUENTE
